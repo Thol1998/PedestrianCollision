@@ -1,0 +1,33 @@
+
+
+<routes>
+
+	<vType id ="vtype1" vClass="taxi" accel="2" decel="2" sigma="0.5" length="4.870" width="1.840"  maxSpeed="60" callFollowMode="carFollowing-Krauss" actionStepLength="0.2" tau="1.4" laneChangeModel="DK2008"/>
+	<vType id ="vtype2" vClass="taxi" accel="0.000001" decel="20000" sigma="0.5" length="4.870" width="1.840"  maxSpeed="60" callFollowMode="carFollowing-Krauss" actionStepLength="0.2" tau="0.01" laneChangeModel="DK2008"/>
+	<vType id ="vtype3" vClass="taxi" accel="0.000001" decel="0.000001" sigma="0.5" length="4.870" width="1.840"  maxSpeed="60" callFollowMode="carFollowing-Krauss" actionStepLength="0.2" tau="1.4" laneChangeModel="DK2008"/>
+    <!--	<vType id ="vtype3" vClass="taxi"  length="4.870" width="1.840"  maxSpeed="60" security="0" estimation="0" callFollowMode="carFollowing-Wiedemann" actionStepLength="0.2" laneChangeModel="DK2008"/>-->
+
+    <!--
+	<vehicle id="veh0" type="vtype1" guiShap="unknown" depart="0" departLane="1" departPos="0" arrivallLane="0" arrivallPos="max" color="0,1,0" departSpeed="20">
+		<route edges="-gneE7 -gneE3"/>
+	</vehicle>
+-->
+
+	<route id="pedestrian1" edges="gneE0 -gneE1"/>
+    <route id="pedestrian2" edges="-gneE1 gneE0"/>
+<!--	<personFlow id="pf1" begin="0" end= "8640000" period="25" >-->
+<!--       <walk route="pedestrian1"/>-->
+<!--    </personFlow>-->
+    <personFlow id="pf2" begin="1" end= "8640000" period="25">
+       <walk route="pedestrian2"/>
+    </personFlow>
+
+<!--end= "864000"-->
+	<flow id="vehflow" color="1,1,0"  begin="20" end= "8640000" departSpeed="20" period="5" type="vtype2">
+    <route id="vehicles" edges="-gneE2 gneE3"/>
+    </flow>
+
+
+
+
+</routes>
